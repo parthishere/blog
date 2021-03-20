@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block body_block %}
+
+
+{% for obj in qs %}
+
+<div class="card">
+    <h5 class="card-header">{{ obj.title }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">By {{ obj.author }}. Posted on {{ obj.created_date|date:'d-m-Y' }}</h5>
+      <p class="card-text"></p>{{ obj.text|truncatechars:50 }}.....</p>
+      <a href="{% url 'detail-cbv' pk=obj.pk %}" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+
+{% endblock %}

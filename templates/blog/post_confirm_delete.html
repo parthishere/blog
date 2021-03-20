@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+
+<form method="POST" class="form-control">
+    {% csrf_token %}
+Are You sure to delete post <b>{{ object.title }}</b>
+<button class='btn btn-danger' type='submit'>Delete Post!</button>
+</form>
+
+
+{% endblock %}

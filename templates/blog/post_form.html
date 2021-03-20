@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+<div class='jumbotron'>
+    Create Post!
+</div>
+
+<form method="POST" class='form-control'>
+{% csrf_token %}
+{{ form.as_p }}
+<button class='btn btn-primary' type='submit' value="submit">Save as Draft</button>
+
+<!-- <button class='btn btn-primary' value='publish' name=publish>Publish</button> -->
+</form>
+
+{% endblock %}
