@@ -25,6 +25,22 @@ posted on {{ object.created_date|date:'d-m-Y' }}
 {% endif %}
 {% endif %}
 
+</br>
+</br>
+</br>
+<hr>
+<form method='POST'>
+{{ form.as_p }}
+{% csrf_token %}
+<input type='submit' value='submit'>
+</form>
 
-
+</br>   
+<hr>
+{% for comment in comments_list %}
+by {{comment.author}}
+</br>
+{{ comment.text }}
+<hr>
+{% endfor %}
 {% endblock %}

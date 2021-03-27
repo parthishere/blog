@@ -17,7 +17,7 @@ class PostForm(forms.ModelForm):
 class CommentsForm(forms.ModelForm):
     class Meta():
         model = Comment
-        exclude = ('approved_comment', 'published_date')
+        exclude = ('approved_comment', 'published_date', 'author', 'post')
         
 
 class UserProfileInfoForm(forms.Form):
